@@ -1,0 +1,148 @@
+.top-bar {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem 0 1.1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+  backdrop-filter: blur(12px);
+  z-index: 4;
+}
+
+.top-left,
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.lang-select {
+  display: flex;
+  align-items: center;
+}
+
+.top-brand {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.top-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border-strong);
+}
+
+.top-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon-btn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  transition: background 160ms var(--ease), color 160ms var(--ease);
+}
+
+.icon-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0.55rem 0.2rem 0.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  max-width: 180px;
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--accent) 18%, var(--sand));
+  color: var(--accent-deep);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.user-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.user-meta strong {
+  font-size: 0.8rem;
+  font-weight: 650;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-meta em {
+  font-style: normal;
+  font-size: 0.68rem;
+  color: var(--text-faint);
+}
+
+.geo-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  max-width: min(360px, 40vw);
+  padding: 0.35rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--warning) 14%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--warning) 30%, transparent);
+  color: var(--text);
+  font-size: 0.75rem;
+}
+
+.geo-banner span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.geo-banner button {
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px) {
+  .user-meta {
+    display: none;
+  }
+
+  .top-divider {
+    display: none;
+  }
+
+  .geo-banner {
+    display: none;
+  }
+}

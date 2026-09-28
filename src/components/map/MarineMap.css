@@ -1,0 +1,187 @@
+.marine-map {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  z-index: 1;
+  background: #c5dce4;
+}
+
+.marine-map .maplibregl-map,
+.marine-map .maplibregl-canvas,
+.marine-map .maplibregl-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.marine-map .maplibregl-canvas {
+  display: block;
+}
+
+.marine-map .maplibregl-map {
+  font-family: var(--font-body);
+}
+
+.marine-map .maplibregl-ctrl-attrib {
+  font-size: 10px;
+  background: var(--bg-panel) !important;
+  color: var(--text-faint) !important;
+}
+
+.marine-map .maplibregl-ctrl-group {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.marine-map .maplibregl-ctrl-group button {
+  background-color: var(--surface) !important;
+}
+
+.marine-map .maplibregl-popup-content {
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 0.65rem 0.8rem;
+  font-family: var(--font-body);
+}
+
+.marine-map .maplibregl-popup-close-button {
+  color: var(--text-muted);
+  font-size: 16px;
+  padding: 0 6px;
+}
+
+.map-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  background: var(--bg-muted);
+  font-family: var(--font-display);
+}
+
+.map-placeholder-error {
+  gap: 0.5rem;
+  text-align: center;
+  padding: 1.5rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.map-placeholder-error strong {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.map-placeholder-error p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.map-toast {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  z-index: 5;
+  max-width: min(420px, 90%);
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.map-toast.route-ok {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+
+.map-toast.basemap-warning {
+  bottom: auto;
+  top: 0.85rem;
+  color: var(--warning);
+  border-color: color-mix(in srgb, var(--warning) 35%, var(--border));
+}
+
+.maplibre-popup strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.maplibre-popup p {
+  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.map-marker {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  padding: 0;
+}
+
+.map-marker.user {
+  width: 18px;
+  height: 18px;
+  background: #1687AD;
+  box-shadow: 0 0 0 4px color-mix(in srgb, #1687AD 35%, transparent);
+}
+
+.map-marker.vessel {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  background: #214554;
+}
+
+.map-marker.vessel-fishing {
+  background: #1687AD;
+}
+
+.map-marker.vessel-patrol {
+  background: #C4922A;
+}
+
+.map-marker.vessel-research {
+  background: #7A6AA8;
+}
+
+.map-marker.life {
+  width: 14px;
+  height: 14px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: #A8CFA9;
+}
+
+.map-marker.life-dolphin {
+  background: #1687AD;
+}
+
+.map-marker.life-turtle {
+  background: #5A9A6A;
+}
+
+.map-marker.life-whale {
+  background: #214554;
+}
+
+.map-marker.selected {
+  outline: 2px solid #F5D36B;
+  outline-offset: 2px;
+}

@@ -1,0 +1,76 @@
+.geo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.geo-card {
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-left-width: 3px;
+}
+
+.geo-card.selected {
+  border-color: var(--accent);
+}
+
+.geo-card.type-maritime_boundary {
+  border-left-color: var(--danger);
+}
+
+.geo-card.type-restricted {
+  border-left-color: var(--warning);
+}
+
+.geo-card.type-mpa {
+  border-left-color: var(--accent);
+}
+
+.geo-card.type-esa {
+  border-left-color: var(--soft-accent);
+}
+
+.geo-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.geo-type {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.geo-card h4 {
+  margin: 0.15rem 0 0;
+  font-size: 0.98rem;
+}
+
+.geo-desc,
+.geo-warn,
+.geo-source {
+  margin: 0.45rem 0 0;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.geo-warn {
+  color: var(--text);
+  font-weight: 550;
+}
+
+.geo-source {
+  font-size: 0.72rem !important;
+  color: var(--text-faint) !important;
+  margin-bottom: 0.65rem !important;
+}

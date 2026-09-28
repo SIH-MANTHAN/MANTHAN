@@ -1,0 +1,65 @@
+.route-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.route-card {
+  padding: 0.9rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.route-card.selected {
+  border-color: var(--warning);
+}
+
+.route-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.route-head h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.route-stats {
+  display: flex;
+  gap: 0.85rem;
+  margin: 0.55rem 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.route-weather {
+  margin: 0 0 0.75rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.route-considerations {
+  margin: 0.25rem 0 0.65rem;
+  padding-left: 1rem;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.route-avoid {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  color: var(--warning);
+  font-weight: 550;
+}
+
+.route-time {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}

@@ -1,0 +1,79 @@
+.layer-group {
+  margin-bottom: 1rem;
+}
+
+.layer-list {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.layer-toggle {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  text-align: left;
+  padding: 0.65rem 0.7rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: border-color 160ms var(--ease), background 160ms var(--ease);
+}
+
+.layer-toggle:hover {
+  border-color: var(--border-strong);
+}
+
+.layer-toggle.on {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--accent-soft) 35%, var(--surface));
+}
+
+.layer-switch {
+  width: 34px;
+  height: 20px;
+  border-radius: 99px;
+  background: var(--border-strong);
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: background 160ms var(--ease);
+}
+
+.layer-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 160ms var(--ease);
+}
+
+.layer-toggle.on .layer-switch {
+  background: var(--accent);
+}
+
+.layer-toggle.on .layer-switch::after {
+  transform: translateX(14px);
+}
+
+.layer-toggle strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.layer-toggle em {
+  display: block;
+  margin-top: 0.15rem;
+  font-style: normal;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}

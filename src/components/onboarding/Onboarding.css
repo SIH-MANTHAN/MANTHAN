@@ -1,0 +1,232 @@
+.onboard {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow: auto;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% 0%, color-mix(in srgb, var(--ocean-light) 35%, transparent), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 100%, color-mix(in srgb, var(--seafoam) 28%, transparent), transparent 55%),
+    var(--bg);
+}
+
+.onboard-atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  color: color-mix(in srgb, var(--ocean) 12%, transparent);
+}
+
+.onboard-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 120px;
+  animation: wave-drift 28s linear infinite;
+}
+
+.onboard-compass {
+  position: absolute;
+  top: 8%;
+  right: 10%;
+  width: 140px;
+  height: 140px;
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  border-radius: 50%;
+  opacity: 0.35;
+}
+
+.onboard-compass::before,
+.onboard-compass::after {
+  content: '';
+  position: absolute;
+  inset: 18%;
+  border: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+  border-radius: 50%;
+}
+
+.onboard-card {
+  width: min(560px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 1.75rem 1.75rem 1.35rem;
+  position: relative;
+  z-index: 1;
+}
+
+.onboard-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.brand-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.brand-tag {
+  margin: 0.1rem 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.onboard-progress {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1.35rem;
+}
+
+.prog-dot {
+  height: 4px;
+  flex: 1;
+  border-radius: 99px;
+  background: var(--border);
+  transition: background 250ms var(--ease);
+}
+
+.prog-dot.on {
+  background: var(--accent);
+}
+
+.onboard-step h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.lede {
+  margin: 0 0 1.25rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.role-card {
+  text-align: left;
+  padding: 0.85rem 0.9rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-muted);
+  transition: border-color 180ms var(--ease), background 180ms var(--ease), transform 160ms var(--ease);
+}
+
+.role-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.role-card.active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent-soft) 45%, var(--surface));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.role-label {
+  display: block;
+  font-weight: 650;
+  font-size: 0.95rem;
+}
+
+.role-hint {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+.loc-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.loc-error {
+  margin: 0.65rem 0 0;
+  color: var(--danger);
+  font-size: 0.88rem;
+}
+
+.loc-success {
+  margin: 0.65rem 0 0;
+  color: var(--success);
+  font-size: 0.88rem;
+  font-weight: 550;
+}
+
+.loc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.loc-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-muted);
+  text-align: left;
+}
+
+.loc-item:hover,
+.loc-item.active {
+  border-color: var(--accent);
+}
+
+.loc-item.active {
+  background: color-mix(in srgb, var(--accent-soft) 40%, var(--surface));
+}
+
+.loc-coords {
+  color: var(--text-faint);
+  font-size: 0.78rem;
+}
+
+.loc-selected {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.onboard-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 560px) {
+  .onboard-card {
+    padding: 1.25rem;
+  }
+
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .onboard-step h1 {
+    font-size: 1.45rem;
+  }
+}

@@ -1,0 +1,135 @@
+.dashboard {
+  height: 100%;
+  display: flex;
+  background: var(--bg);
+}
+
+.dashboard-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-workspace {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(300px, var(--panel-width)) 1fr;
+  gap: 0;
+}
+
+.insight-panel {
+  min-height: 0;
+  border-right: 1px solid var(--border);
+  background: var(--bg-panel);
+  display: flex;
+  flex-direction: column;
+  transition: width var(--duration) var(--ease);
+}
+
+.insight-panel.wide {
+  /* keep same width; chat uses internal density */
+}
+
+.insight-inner {
+  flex: 1;
+  min-height: 0;
+  padding: 1rem 1rem 1.1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.insight-inner > * {
+  flex: 1;
+  min-height: 0;
+}
+
+.chart-stage {
+  position: relative;
+  min-height: 0;
+  min-width: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 80% 10%, color-mix(in srgb, var(--ocean-light) 18%, transparent), transparent 60%),
+    var(--bg-muted);
+  padding: 0.75rem;
+}
+
+.chart-frame {
+  position: relative;
+  height: 100%;
+  min-height: 240px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.chart-loading {
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-ornament {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 500;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-panel);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 650;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+@media (max-width: 1100px) {
+  .dashboard-workspace {
+    grid-template-columns: minmax(280px, 340px) 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .dashboard-workspace {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(240px, 42vh) 1fr;
+  }
+
+  .chart-stage {
+    order: -1;
+    padding: 0.5rem 0.5rem 0;
+  }
+
+  .insight-panel {
+    border-right: none;
+    border-top: 1px solid var(--border);
+  }
+
+  .chart-frame {
+    border-radius: var(--radius-md);
+  }
+}

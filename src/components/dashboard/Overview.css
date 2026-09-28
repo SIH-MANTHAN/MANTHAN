@@ -1,0 +1,93 @@
+.overview-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.85rem;
+}
+
+.condition-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.condition-strip div {
+  padding: 0.55rem 0.4rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.condition-strip span {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 0.2rem;
+}
+
+.condition-strip strong {
+  font-size: 0.88rem;
+}
+
+.condition-strip .provenance-badge {
+  display: block;
+  margin: 0.3rem auto 0;
+  width: fit-content;
+}
+
+.overview-card {
+  width: 100%;
+  text-align: left;
+  padding: 0.85rem;
+  margin-bottom: 0.55rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: border-color 160ms var(--ease), transform 160ms var(--ease);
+}
+
+.overview-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.overview-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.overview-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.overview-card .faint {
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+.count-chip {
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--accent-deep);
+}
+
+.quick-ask {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 420px) {
+  .condition-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
